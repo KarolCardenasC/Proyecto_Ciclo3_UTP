@@ -2,4 +2,4 @@
 
 # Descripción
 
-Desarrollo de página web que facilita el registro e ingreso de visitantes y estudiantes del panóptico cultural de Ibagué
+Desarrollo de página web que facilita el registro e ingreso de estudiantes adscritos y no adscritos del panóptico cultural de Ibagué
