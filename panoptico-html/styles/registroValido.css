@@ -2,7 +2,7 @@ body{
     background-color: rgb(219, 206, 250);
     background-image: url(./imagenes/logo.png);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 #texto{
