@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(219, 206, 250);
+    background-image: url(./imagenes/logo.png);
+    background-position: center;
+    background-size: contain;
+}
+
+#texto{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 4% 28% 1% 28%;
+    border-radius: 30px; 
+    background-color: rgba(255, 255, 255, 0.795);
+
+}
+#texto #titulo{
+    font-family: cursive;
+    font-size: 2.5rem;
+}
+#texto #parrafo{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#boton{
+    text-align: center;
+    margin-top: 2.5%;
+}
+#boton button{
+    font-family: cursive;
+    font-size: 1.6rem;
+    background-color: rgb(30, 179, 30);
+    border-style: none;
+    color: azure;
+    border-radius: 12px;
+}
