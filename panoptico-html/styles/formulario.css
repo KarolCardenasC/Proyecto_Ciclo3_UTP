@@ -27,8 +27,8 @@ body {
 
 }
 
-#div-formulario button a {
-  /* text-decoration: none; */
+#btn-ok{
+   text-decoration: none; 
 }
 
 .card-body input {
