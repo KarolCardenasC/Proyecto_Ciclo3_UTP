@@ -1,20 +1,19 @@
+#font {
+    background-color: rgb(255, 212, 21);
+    background-image: url(./imagenes/logo.png);
+    background-position: center;
+    background-size: 88rem;
+}
+
+#section-img {
+    display: flex;
+    justify-content: right;
+}
+
 #panel-central {
     margin-top: 10px;
     display: flex;
     justify-content: center;
-}
-
-
-#fondo {
-    background-position: 50% 50%;
-    background-image: url(./imagenes/logo.png);
-    background-size: 100rem;
-    background-color: #ffd000;
-}
-
-#fondo img {
-    margin-left: 80%;
-    margin-right: 50%;
 }
 
 #div-formulario {
