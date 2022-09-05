@@ -1,5 +1,5 @@
 #font {
-    background-color: rgb(255, 212, 21);
+    background-color: rgba(252, 232, 144, 0.765);
     background-image: url(./imagenes/logo.png);
     background-position: center;
     background-size: 88rem;
@@ -11,7 +11,7 @@
 }
 
 #panel-central {
-    margin-top: 10px;
+    margin-top: px;
     display: flex;
     justify-content: center;
 }
@@ -47,4 +47,6 @@
     font-weight: bolder;
     background-color: rgb(243, 72, 72);
     min-width: 80%;
+    margin: 0% 0% 5% 0%;
 }
+
