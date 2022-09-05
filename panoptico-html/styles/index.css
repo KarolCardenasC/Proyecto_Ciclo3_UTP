@@ -11,26 +11,25 @@
 }
 
 #panel-central {
-    margin-top: px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #div-formulario {
-    min-width: 20%;
+    min-width: 35%;
     opacity: 95%;
     background-color: white;
-    border-radius: 4%;
+    border-radius: 6%;
 }
 
 #div-formulario b {
     font-size: x-large;
-
 }
 
 .main-section {
     opacity: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 #mb-3 button {

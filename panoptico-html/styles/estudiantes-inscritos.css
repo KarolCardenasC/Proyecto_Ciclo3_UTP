@@ -11,19 +11,20 @@ body {
     /*     heigh:665px; */
     background-image: url("../styles/imagenes/logo.png");
     background-size: 88rem;
-    background-color: #f75151c1;
+    background-color: #f65e5ec1;
 }
 
 
 #div-formulario {
-    min-width: 35%;
+    min-width: 33%;
     opacity: 88%;
     background-color: white;
-    border-radius: 4%;
+    border-radius: 5%;
 }
 
 #div-formulario b {
     font-size: x-large;
+    
 
 }
 
