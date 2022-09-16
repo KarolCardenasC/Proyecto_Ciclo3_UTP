@@ -15,18 +15,18 @@ public class EstudiantesInscritos {
     private String nombre;
     private String apellido;
     private String telefono;
-    private String email;
+    private boolean ingreso;
 
     public EstudiantesInscritos() {
 
     }
 
-    public EstudiantesInscritos(String idEstudiante, String nombre, String apellido, String telefono, String email) {
+    public EstudiantesInscritos(String idEstudiante, String nombre, String apellido, String telefono, boolean ingreso) {
         this.idEstudiante = idEstudiante;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-        this.email = email;
+        this.ingreso = ingreso;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class EstudiantesInscritos {
         info += "\nNombre: " + nombre;
         info += "\nApellido: " + apellido;
         info += "\nTelefono: " + telefono;
-        info += "\nEmail: " + email;
+        info += "\nIngreso: " + ingreso;
         info += "\n---------------------\n";
         return info;
     }
@@ -58,25 +58,13 @@ public class EstudiantesInscritos {
         return telefono;
     }
 
-    public String getEmail() {
-        return email;
+    public boolean getIngreso() {
+        return ingreso;
     }
 
     // SETTERS
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setIngreso(boolean ingreso) {
+        this.ingreso = ingreso;
     }
 
 }

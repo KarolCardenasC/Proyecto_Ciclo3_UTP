@@ -2,7 +2,16 @@ package com.panoptico.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "#")
 public class VisitasGuiadas {
+    @Id
+    @Column(name = "#")
     private int idVisitas;
     private String cedula;
     private String nombre;

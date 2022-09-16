@@ -10,7 +10,7 @@ import com.panoptico.model.EstudiantesInscritos;
 import com.panoptico.services.EstudiantesService;
 
 @RestController
-@RequestMapping("/estudiantes")
+@RequestMapping("/#")
 public class EstudiantesInscritosController {
     private EstudiantesService service;
 
