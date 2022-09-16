@@ -37,7 +37,7 @@ public class EstudiantesService {
         return estudiantesInscritos;
     }
 
-    public EstudiantesInscritos getMascotaXId(String cedula) {
+    public EstudiantesInscritos getEstudianteXId(String cedula) {
         EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
         Session session = openSession();
         try {
