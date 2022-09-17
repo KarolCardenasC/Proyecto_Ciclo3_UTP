@@ -1,35 +1,47 @@
 package com.panoptico.model;
 
-import java.util.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "#")
+@Table(name = "visitas_guiadas")
 public class VisitasGuiadas {
     @Id
-    @Column(name = "#")
+    @Column(name = "id_visitante")
     private int idVisitas;
     private String cedula;
     private String nombre;
-    private String apellido;
-    private Date fecha;
+    private String telefono;
+    private String email;
 
     public VisitasGuiadas() {
 
     }
 
-    public VisitasGuiadas(String cedula, String nombre, String apellido, Date fecha) {
+    public VisitasGuiadas(int idVisitas, String cedula, String nombre, String telefono, String email) {
+        this.idVisitas = idVisitas;
         this.cedula = cedula;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.fecha = fecha;
+        this.telefono = telefono;
+        this.email = email;
+
     }
 
-    public int getIdVisitas() {
+    @Override
+    public String toString() {
+        String info = "---------------------\n";
+        info += "cedula: " + cedula;
+        info += "\nNombre: " + nombre;
+        info += "\nTelefono: " + telefono;
+        info += "\nEmail: " + email;
+        info += "\n---------------------\n";
+        return info;
+    }
+
+    // GETTERS
+    public int getidVisitas() {
         return idVisitas;
     }
 
@@ -41,12 +53,12 @@ public class VisitasGuiadas {
         return nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public String getEmail() {
+        return email;
     }
 
     public void setCedula(String cedula) {
@@ -57,11 +69,12 @@ public class VisitasGuiadas {
         this.nombre = nombre;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
 }

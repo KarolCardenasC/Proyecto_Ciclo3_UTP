@@ -6,65 +6,60 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "#")
+@Table(name = "estudiantes_inscritos")
 public class EstudiantesInscritos {
     // Atributos
     @Id
-    @Column(name = "#")
-    private String idEstudiante;
+    @Column(name = "id_estudiante")
+    private int idEstudiante;
+    private String cedula;
     private String nombre;
-    private String apellido;
     private String telefono;
-    private boolean ingreso;
+    private String email;
 
     public EstudiantesInscritos() {
 
     }
 
-    public EstudiantesInscritos(String idEstudiante, String nombre, String apellido, String telefono, boolean ingreso) {
+    public EstudiantesInscritos(int idEstudiante, String cedula, String nombre, String telefono, String email) {
         this.idEstudiante = idEstudiante;
+        this.cedula = cedula;
         this.nombre = nombre;
-        this.apellido = apellido;
         this.telefono = telefono;
-        this.ingreso = ingreso;
+        this.email = email;
+
     }
 
     @Override
     public String toString() {
         String info = "---------------------\n";
-        info += "idEstudiante: " + idEstudiante;
+        info += "cedula: " + cedula;
         info += "\nNombre: " + nombre;
-        info += "\nApellido: " + apellido;
         info += "\nTelefono: " + telefono;
-        info += "\nIngreso: " + ingreso;
+        info += "\nEmail: " + email;
         info += "\n---------------------\n";
         return info;
     }
 
     // GETTERS
-    public String getidEstudiante() {
+    public int getidEstudiante() {
         return idEstudiante;
+    }
+
+    public String getCedula() {
+        return cedula;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
     public String getTelefono() {
         return telefono;
     }
 
-    public boolean getIngreso() {
-        return ingreso;
-    }
-
-    // SETTERS
-    public void setIngreso(boolean ingreso) {
-        this.ingreso = ingreso;
+    public String getEmail() {
+        return email;
     }
 
 }

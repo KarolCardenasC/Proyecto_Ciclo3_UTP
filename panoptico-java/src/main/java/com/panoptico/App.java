@@ -18,8 +18,8 @@ public class App {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/#").allowedOrigins("*");
-                registry.addMapping("/#").allowedOrigins("*");
+                registry.addMapping("/estudiantes_inscritos").allowedOrigins("*");
+                registry.addMapping("/visitas_guiadas").allowedOrigins("*");
             }
         };
     }

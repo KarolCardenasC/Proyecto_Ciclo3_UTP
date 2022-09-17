@@ -37,15 +37,34 @@ public class EstudiantesService {
         return estudiantesInscritos;
     }
 
-    public EstudiantesInscritos getEstudianteXId(String cedula) {
-        EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
+    public List<EstudiantesInscritos> getxCC(String cedula) {
+        List<EstudiantesInscritos> estudiantesInscritos = new ArrayList<>();
         Session session = openSession();
         try {
-            estudiantesInscritos = session.find(EstudiantesInscritos.class, cedula);
+            estudiantesInscritos = session
+                    .createQuery("from EstudiantesInscritos where cedula = :param_cedula", EstudiantesInscritos.class)
+                    .setParameter("param_cedula", cedula)
+                    .list();
+            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return estudiantesInscritos;
+    }
+
+    public String create(EstudiantesInscritos estudiantesInscritos) {
+        String resp = "";
+        Session session = openSession();
+        try {
+            session.persist(estudiantesInscritos);
+            session.getTransaction().commit();
+            resp = "Estudiante registrado con éxito";
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp = e.getMessage();
+        }
+        session.close();
+        return resp;
     }
 
 }
