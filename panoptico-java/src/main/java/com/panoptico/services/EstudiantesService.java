@@ -37,18 +37,31 @@ public class EstudiantesService {
         return estudiantesInscritos;
     }
 
-    public List<EstudiantesInscritos> getxCC(String cedula) {
-        List<EstudiantesInscritos> estudiantesInscritos = new ArrayList<>();
+    public EstudiantesInscritos getxCC(String cedula) {
+        EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
         Session session = openSession();
         try {
             estudiantesInscritos = session
                     .createQuery("from EstudiantesInscritos where cedula = :param_cedula", EstudiantesInscritos.class)
-                    .setParameter("param_cedula", cedula)
-                    .list();
+                    .setParameter("param_cedula", cedula).uniqueResult();
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return estudiantesInscritos;
+    }
+
+    public EstudiantesInscritos getxId(int idEstudiante) {
+        EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
+        Session session = openSession();
+        try {
+            estudiantesInscritos = session.find(EstudiantesInscritos.class, idEstudiante);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        session.close();
+
         return estudiantesInscritos;
     }
 
@@ -65,6 +78,59 @@ public class EstudiantesService {
         }
         session.close();
         return resp;
+    }
+
+    public String updateEstudiantesInscritos(EstudiantesInscritos estudiantesInscritos) {
+        String message = "";
+        Session session = openSession();
+
+        try {
+            session.merge(estudiantesInscritos);
+            session.getTransaction().commit();
+            message = "Estudiante Inscrito actualizado con éxito!";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+
+        session.close();
+
+        return message;
+    }
+
+    public String deleteEstudiantesInscritosxId(int idEstudiante) {
+        String message = "";
+        Session session = openSession();
+
+        try {
+            EstudiantesInscritos estudiantesInscritos = getxId(idEstudiante);
+            session.remove(estudiantesInscritos);
+            session.getTransaction().commit();
+            message = "Estudiante Inscrito eliminado con éxito!";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+
+        session.close();
+
+        return message;
+    }
+
+    public String deleteEstudiantesInscritosxCC(String cedula){
+        String message = "";
+        Session session = openSession();
+
+        try {
+            EstudiantesInscritos estudiantesInscritos = getxCC(cedula);
+            session.remove(estudiantesInscritos);
+            session.getTransaction().commit();
+            message = "Estudiante Inscrito eliminado con éxito!";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+
+        session.close();
+
+        return message;
     }
 
 }
