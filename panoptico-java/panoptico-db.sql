@@ -1,4 +1,7 @@
 
+-- LA BASE DE DATOS YA HA SIDO HOSTEADA EN LA NUBE
+-- PRUEBAS REALIZADAS EN POSTMAN CON LOCALHOST:8080
+
 CREATE TABLE estudiantes_inscritos(
 	id_estudiante int PRIMARY KEY AUTO_INCREMENT NOT NULL, 
 	cedula VARCHAR(30) NOT NULL,
@@ -23,3 +26,4 @@ CREATE TABLE ingreso(
 	FOREIGN KEY(ingreso_estudiante) REFERENCES estudiantes_inscritos(id_estudiante),
 	FOREIGN KEY(ingreso_visita) REFERENCES visitas_guiadas(id_visitante)
 );
+
