@@ -18,8 +18,8 @@ CREATE TABLE visitas_guiadas(
 CREATE TABLE ingreso(
 	id_ingreso int PRIMARY KEY AUTO_INCREMENT NOT NULL,
     fecha DATETIME,
-    ingreso_estudiante INT(30) NOT NULL,
+    ingreso_estudiante INT not null,
+    ingreso_visita INT not null,
 	FOREIGN KEY(ingreso_estudiante) REFERENCES estudiantes_inscritos(id_estudiante),
-    ingreso_visita INT(30) NOT NULL,
 	FOREIGN KEY(ingreso_visita) REFERENCES visitas_guiadas(id_visitante)
 );

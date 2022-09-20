@@ -3,9 +3,9 @@
  <hibernate-configuration>
    <session-factory>
      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="connection.url">jdbc:mysql://localhost/panoptico-db</property>
-     <property name="connection.username">root</property>
-     <property name="connection.password">*******</property>
+    <property name="connection.url">jdbc:mysql://uu6nxlbqcka5x1jo:vVUtHVKuIATlQ0NABdm2@blamyq32slzamzmbtsev-mysql.services.clever-cloud.com:3306/blamyq32slzamzmbtsev</property>
+     <property name="connection.username">uu6nxlbqcka5x1jo</property>
+     <property name="connection.password">Lichunde@d36005756</property>
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="hibernate.show_sql">true</property>
    </session-factory>
