@@ -1,6 +1,6 @@
 package com.panoptico.services;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,8 +41,8 @@ public class IngresoService {
     public String create_ingreso(int ingreso_estudiante, int ingreso_visita) {
         String resp = "";
         Session session = openSession();
-        LocalDate localDate = LocalDate.now();
-        String fecha = ""+localDate+"";
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String fecha = ""+localDateTime+"";
         Ingreso ingreso = new Ingreso(fecha, ingreso_estudiante, ingreso_visita);
         try {
             session.persist(ingreso);
@@ -50,7 +50,7 @@ public class IngresoService {
             resp = "Estudiante ingresado a la tabla registro con éxito";
         } catch (Exception e) {
             e.printStackTrace();
-            resp = "ERROR !!! No se pudo registrar en la tabla ingresp" + e.getMessage();
+            resp = "ERROR !!! No se pudo registrar en la tabla ingreso" + e.getMessage();
         }
         session.close();
         return resp;
@@ -59,8 +59,8 @@ public class IngresoService {
     public String create_ingreso_estudiante(int ingreso_estudiante) {
         String resp = "";
         Session session = openSession();
-        LocalDate localDate = LocalDate.now();
-        String fecha = ""+localDate+"";
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String fecha = ""+localDateTime+"";
         Ingreso ingreso = new Ingreso(fecha, ingreso_estudiante);
         try {
             session.persist(ingreso);
