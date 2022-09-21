@@ -1,5 +1,8 @@
 package com.panoptico.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -12,9 +15,13 @@ public class Ingreso {
     @Id
     @Column(name = "id_ingreso")
     private int idIngreso;
+    
     private String fecha;
-    private int ingreso_estudiante;
-    private int ingreso_visita;
+
+    @Column(name = "ingreso_estudiante", nullable = true)
+    private Integer ingreso_estudiante;
+    @Column(name = "ingreso_visita", nullable = true)
+    private Integer ingreso_visita;
 
     // Constructores
     public Ingreso() {
@@ -29,6 +36,16 @@ public class Ingreso {
     public Ingreso(String fecha, int ingreso_estudiante) {
         this.fecha = fecha;
         this.ingreso_estudiante = ingreso_estudiante;
+        this.ingreso_visita = null;
+    }
+
+    public Ingreso(int ingreso_visita) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy  -  HH:mm:ss");
+        String fecha = ""+localDateTime.format(formato)+"";
+        this.fecha = fecha;
+        this.ingreso_visita = ingreso_visita;
+        this.ingreso_estudiante = null;
     }
     
     // Getters
@@ -61,6 +78,15 @@ public class Ingreso {
     public void setIngreso_visita(int ingreso_visita) {
         this.ingreso_visita = ingreso_visita;
     }
+
+    @Override
+    public String toString() {
+        return "Ingreso [fecha=" + fecha + ", idIngreso=" + idIngreso + ", ingreso_estudiante=" + ingreso_estudiante
+                + ", ingreso_visita=" + ingreso_visita + "]";
+    }
+
+
+    
 
     
 }

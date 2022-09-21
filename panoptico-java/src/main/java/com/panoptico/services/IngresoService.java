@@ -1,6 +1,7 @@
 package com.panoptico.services;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,19 +39,18 @@ public class IngresoService {
         return ingreso;
     }
 
-    public String create_ingreso(int ingreso_estudiante, int ingreso_visita) {
+    public String create_ingreso_visita(int ingreso_visita) {
         String resp = "";
         Session session = openSession();
-        LocalDateTime localDateTime = LocalDateTime.now();
-        String fecha = ""+localDateTime+"";
-        Ingreso ingreso = new Ingreso(fecha, ingreso_estudiante, ingreso_visita);
+        Ingreso ingreso = new Ingreso(ingreso_visita);
+
         try {
             session.persist(ingreso);
             session.getTransaction().commit();
-            resp = "Estudiante ingresado a la tabla registro con éxito";
+            resp = "Estudiante No inscrito ingresado a la tabla registro con éxito";
         } catch (Exception e) {
             e.printStackTrace();
-            resp = "ERROR !!! No se pudo registrar en la tabla ingreso" + e.getMessage();
+            resp = "ERROR !!! No se pudo registrar el Estudiante No inscrito en la tabla ingreso" + e.getMessage();
         }
         session.close();
         return resp;
@@ -60,15 +60,16 @@ public class IngresoService {
         String resp = "";
         Session session = openSession();
         LocalDateTime localDateTime = LocalDateTime.now();
-        String fecha = ""+localDateTime+"";
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy  -  HH:mm:ss");
+        String fecha = ""+localDateTime.format(formato)+"";
         Ingreso ingreso = new Ingreso(fecha, ingreso_estudiante);
         try {
             session.persist(ingreso);
             session.getTransaction().commit();
-            resp = "Estudiante ingresado a la tabla registro con éxito";
+            resp = "Estudiante Inscrito ingresado a la tabla registro con éxito";
         } catch (Exception e) {
             e.printStackTrace();
-            resp = "ERROR !!! No se pudo registrar en la tabla ingresp" + e.getMessage();
+            resp = "ERROR !!! No se pudo registrar el estudiante Inscrito en la tabla ingreso" + e.getMessage();
         }
         session.close();
         return resp;
