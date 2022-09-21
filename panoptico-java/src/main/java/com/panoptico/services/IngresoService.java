@@ -1,6 +1,8 @@
 package com.panoptico.services;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,6 +24,18 @@ public class IngresoService {
         Session session = factory.openSession();
         session.beginTransaction();
         return session;
+    }
+
+    public List<Ingreso> getIngreso() {
+        List<Ingreso> ingreso = new ArrayList<>();
+        Session session = openSession();
+        try {
+            ingreso = session.createQuery("from Ingreso", Ingreso.class).list();
+            session.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ingreso;
     }
 
     public String create_ingreso(int ingreso_estudiante, int ingreso_visita) {
