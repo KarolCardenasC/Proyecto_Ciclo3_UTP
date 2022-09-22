@@ -25,12 +25,14 @@ CREATE TABLE visitas_guiadas(
 	email VARCHAR(100) NOT NULL
 );
 
+CREATE UNIQUE INDEX estudiantes_inscritos_cedula_uniq ON estudiantes_inscritos(cedula);
+CREATE UNIQUE INDEX visitas_guiadas_cedula_uniq ON visitas_guiadas(cedula);
+
 CREATE TABLE ingreso(
 	id_ingreso int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    fecha varchar(100) not null,
-    ingreso_estudiante INT default null,
-    ingreso_visita INT default null,
-	FOREIGN KEY(ingreso_estudiante) REFERENCES estudiantes_inscritos(id_estudiante),
-	FOREIGN KEY(ingreso_visita) REFERENCES visitas_guiadas(id_visitante)
+    fecha Varchar(100),
+    ingreso_estudiante varchar(30) default null,
+    ingreso_visita varchar(30) default null,
+	FOREIGN KEY(ingreso_estudiante) REFERENCES estudiantes_inscritos(cedula),
+	FOREIGN KEY(ingreso_visita) REFERENCES visitas_guiadas(cedula)
 );
-
