@@ -44,6 +44,12 @@ public class VisitasGuiadasController {
         return service.create(visitasGuiadas);
     }
 
+    @PostMapping("/register")
+    public String create_register_visita(@RequestBody VisitasGuiadas visitasGuiadas) {
+      return service.create_register_visita(visitasGuiadas);
+
+    }
+
     @PutMapping
     public String updateVisitasGuiadas(@RequestBody VisitasGuiadas visitasGuiadas) {
         return service.updateVisitasGuiadas(visitasGuiadas);

@@ -44,6 +44,12 @@ public class EstudiantesInscritosController {
 
     }
 
+    @PostMapping("/register")
+    public String create_register_estudiante(@RequestBody EstudiantesInscritos estudiante) {
+      return service.create_register_estudiante(estudiante);
+
+    }
+
     @PutMapping
     public String updateEstudiantesInscritos(@RequestBody EstudiantesInscritos estudiante) {
       return service.updateEstudiantesInscritos(estudiante);

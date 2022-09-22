@@ -80,6 +80,18 @@ public class VisitasService {
         return resp;
     }
 
+    public String create_register_visita(VisitasGuiadas visitasGuiadas) {
+
+        IngresoService ingreso = new IngresoService();
+
+        String crear = create(visitasGuiadas);
+
+        String cedula = visitasGuiadas.getCedula();
+        String registrar = ingreso.create_ingreso_visita(cedula);
+
+        return crear + "\n" + registrar;
+    }
+
     public String updateVisitasGuiadas(VisitasGuiadas visitasGuiadas){
         String message = "";
         Session session = openSession();

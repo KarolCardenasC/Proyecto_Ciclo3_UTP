@@ -80,6 +80,18 @@ public class EstudiantesService {
         return resp;
     }
 
+    public String create_register_estudiante(EstudiantesInscritos estudiantesInscritos) {
+
+        IngresoService ingreso = new IngresoService();
+
+        String crear = create(estudiantesInscritos);
+
+        String cedula = estudiantesInscritos.getCedula();
+        String registrar = ingreso.create_ingreso_estudiante(cedula);
+
+        return crear + "\n" + registrar;
+    }
+
     public String updateEstudiantesInscritos(EstudiantesInscritos estudiantesInscritos) {
         String message = "";
         Session session = openSession();
