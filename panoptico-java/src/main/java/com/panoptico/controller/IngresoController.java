@@ -27,13 +27,13 @@ public class IngresoController {
     }
     
     @PostMapping("/visitantes/{idVisitas}")
-    public String create_ingreso(@PathVariable(name = "idVisitas") int ingreso_visita) {
+    public String create_ingreso(@PathVariable(name = "idVisitas") String ingreso_visita) {
         return service.create_ingreso_visita(ingreso_visita);
 
     }
 
     @PostMapping("/estudiantes/{idEstudiante}")
-    public String create_ingreso_estudiante(@PathVariable(name = "idEstudiante") int ingreso_estudiante) {
+    public String create_ingreso_estudiante(@PathVariable(name = "idEstudiante") String ingreso_estudiante) {
         return service.create_ingreso_estudiante(ingreso_estudiante);
 
     }

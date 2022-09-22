@@ -39,7 +39,7 @@ public class IngresoService {
         return ingreso;
     }
 
-    public String create_ingreso_visita(int ingreso_visita) {
+    public String create_ingreso_visita(String ingreso_visita) {
         String resp = "";
         Session session = openSession();
         Ingreso ingreso = new Ingreso(ingreso_visita);
@@ -56,7 +56,7 @@ public class IngresoService {
         return resp;
     }
 
-    public String create_ingreso_estudiante(int ingreso_estudiante) {
+    public String create_ingreso_estudiante(String ingreso_estudiante) {
         String resp = "";
         Session session = openSession();
         LocalDateTime localDateTime = LocalDateTime.now();
