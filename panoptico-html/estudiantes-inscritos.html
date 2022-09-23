@@ -41,7 +41,7 @@
             <b>INGRESA TUS DATOS:</b>
           </div>
           <div class="card-body">
-            <form onsubmit="submit_search(event)">
+            <form onsubmit="submit_search(event)" >
               <div class="mb-3">
                 <input
                   type="search"
@@ -51,14 +51,37 @@
                   placeholder="CC"
                 />
               </div>
-              <button type="submit" class="btn btn-success btn-lg p-3">
+              <button type="submit" 
+              class="btn btn-success btn-lg p-3"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">
                 OK
               </button>
             </form>
             
           </div>
         </div>
-      </section>
+      </section>      
+   <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bienvenido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <span id="mensaje-busqueda"></span>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button> -->
+        <button type="button" class="btn btn-success" 
+        data-bs-dismiss="modal"
+        onclick="delete_pet()"
+        >Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
     </main>
     <footer></footer>
     <script src="./scripts/estudiantes-inscritos.js"> </script>

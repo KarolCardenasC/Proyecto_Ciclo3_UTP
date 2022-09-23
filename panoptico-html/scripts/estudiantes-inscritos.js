@@ -1,8 +1,7 @@
 const URL_API = "http://localhost:8080/estudiantes_inscritos";
 
 function submit_search (evt) {
-    evt.preventDefault()
-    //alert("evento ok")
+    evt.preventDefault()    
     const cedula = evt.target.cedula.value
    // console.log(cedula)
     search(cedula) 
@@ -18,10 +17,14 @@ function submit_search (evt) {
         const respuesta = await fetch(`${URL_API}/${cedula}`)
     const estudiante = await respuesta.json()
     console.log(estudiante)
+    document.getElementById("mensaje-busqueda").innerText = "¡BIENVENIDO(A) " +estudiante.nombre + "\n"
+    + "AL MUESO PANÓPTICO DE IBAGUÉ!"
     }
-    else
-    alert("Usuario consultado NO es estudiante registrado")
-    
+    else{
+    document.getElementById("mensaje-busqueda").innerText = "Usuario consultado CC:" + cedula+
+    " NO es estudiante registrado" 
+    //alert("Usuario consultado NO es estudiante registrado")
+    }
    // listarMascotas([mascota])
   }
 
