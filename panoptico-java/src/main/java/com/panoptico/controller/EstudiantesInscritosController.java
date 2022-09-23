@@ -2,6 +2,7 @@ package com.panoptico.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +30,14 @@ public class EstudiantesInscritosController {
     }
 
     @GetMapping("/{cedula}")
-    public EstudiantesInscritos getxCC(@PathVariable(name = "cedula") String cedula) {
+    @CrossOrigin("*")
+    public EstudiantesInscritos getxCC(@PathVariable(name = "cedula") String cedula) {      
       return service.getxCC(cedula);
+    }
+    @GetMapping("/existe/{cedula}")
+    @CrossOrigin("*")
+    public boolean existe(@PathVariable(name = "cedula") String cedula) {      
+      return service.existe(cedula);
     }
 
     @GetMapping("/id/{idEstudiante}")

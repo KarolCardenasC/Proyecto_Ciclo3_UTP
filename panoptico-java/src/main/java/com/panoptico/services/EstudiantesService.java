@@ -51,6 +51,24 @@ public class EstudiantesService {
         return estudiantesInscritos;
     }
 
+    public boolean existe(String cedula) {
+        EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
+        boolean existe = false;
+        Session session = openSession();
+        try {
+            estudiantesInscritos = session
+                    .createQuery("from EstudiantesInscritos where cedula = :param_cedula", EstudiantesInscritos.class)
+                    .setParameter("param_cedula", cedula).uniqueResult();
+            if(estudiantesInscritos.getCedula().isEmpty() == false){
+                        existe=true;
+            }
+            session.close();           
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return existe;
+    }
+
     public EstudiantesInscritos getxId(int idEstudiante) {
         EstudiantesInscritos estudiantesInscritos = new EstudiantesInscritos();
         Session session = openSession();
