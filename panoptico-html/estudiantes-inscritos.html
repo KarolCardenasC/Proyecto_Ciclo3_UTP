@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="./styles/estudiantes-inscritos.css" />
 
-    <title>Formulario</title>
+    <title>Estudiantes inscritos</title>
   </head>
   <body>
     <!-- <body class="bg-success p-2 bg-opacity-75"> -->
@@ -41,27 +41,26 @@
             <b>INGRESA TUS DATOS:</b>
           </div>
           <div class="card-body">
-            <form>
+            <form onsubmit="submit_search(event)">
               <div class="mb-3">
                 <input
-                  type=""
+                  type="search"
                   class="form-control-lg"
-                  id="ID"
-                  placeholder="ID"
+                  id="CC"
+                  name="cedula"
+                  placeholder="CC"
                 />
               </div>
+              <button type="submit" class="btn btn-success btn-lg p-3">
+                OK
+              </button>
             </form>
-            <section>
-              <a href="./registroValido.html">
-                <button type="submit" class="btn btn-success btn-lg p-3">
-                  OK
-                </button>
-              </a>
-            </section>
+            
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+    <script src="./scripts/estudiantes-inscritos.js"> </script>
   </body>
 </html>
