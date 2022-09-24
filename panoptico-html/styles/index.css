@@ -1,20 +1,13 @@
-#font {
+body {
     background-color: rgba(252, 232, 144, 0.765);
-    background-image: url(./imagenes/logo.png);
+    background-image: url("../styles/imagenes/logo.png");
     background-position: center;
     background-size: 88rem;
 }
 
-#section-img {
+.m-4 {
     display: flex;
     justify-content: right;
-    margin-right: 30px;
-    margin-top: 15px;
-}
-
-#section-img img{
-    width: 120px;
-    height: 120px;
 }
 
 #panel-central {
