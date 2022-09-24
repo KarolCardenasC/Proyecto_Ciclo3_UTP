@@ -8,6 +8,13 @@
 #section-img {
     display: flex;
     justify-content: right;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+#section-img img{
+    width: 120px;
+    height: 120px;
 }
 
 #panel-central {
@@ -48,4 +55,3 @@
     min-width: 80%;
     margin: 0% 0% 5% 0%;
 }
-
