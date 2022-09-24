@@ -39,6 +39,20 @@ public class IngresoService {
         return ingreso;
     }
 
+    public Ingreso getxId_Ingreso(int idIngreso) {
+        Ingreso ingreso = new Ingreso();
+        Session session = openSession();
+        try {
+            ingreso = session.find(Ingreso.class, idIngreso);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        session.close();
+
+        return ingreso;
+    }
+
     public String create_ingreso_visita(String ingreso_visita) {
         String resp = "";
         Session session = openSession();
@@ -73,6 +87,24 @@ public class IngresoService {
         }
         session.close();
         return resp;
+    }
+
+    public String deleteIngresoxId(int idIngreso){
+        String message = "";
+        Session session = openSession();
+
+        try {
+            Ingreso ingreso = getxId_Ingreso(idIngreso);
+            session.remove(ingreso);
+            session.getTransaction().commit();
+            message = "Ingreso eliminado con éxito!";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+
+        session.close();
+
+        return message;
     }
 
 }

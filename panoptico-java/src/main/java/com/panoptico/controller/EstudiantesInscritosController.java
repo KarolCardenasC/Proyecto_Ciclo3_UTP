@@ -58,16 +58,19 @@ public class EstudiantesInscritosController {
     }
 
     @PutMapping
+    @CrossOrigin("*")
     public String updateEstudiantesInscritos(@RequestBody EstudiantesInscritos estudiante) {
       return service.updateEstudiantesInscritos(estudiante);
     }
 
     @DeleteMapping("/id/{idEstudiante}")
+    @CrossOrigin("*")
     public String deleteEstudiantesInscritosxId(@PathVariable(name = "idEstudiante") int idEstudiante) {
       return service.deleteEstudiantesInscritosxId(idEstudiante);
     }
 
     @DeleteMapping("/cc/{cedula}")
+    @CrossOrigin("*")
     public String deleteEstudiantesInscritosxCC(@PathVariable(name = "cedula") String cedula) {
       return service.deleteEstudiantesInscritosxCC(cedula);
     }
