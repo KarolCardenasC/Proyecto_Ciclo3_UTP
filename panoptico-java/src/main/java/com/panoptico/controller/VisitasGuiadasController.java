@@ -58,6 +58,7 @@ public class VisitasGuiadasController {
     }
 
     @DeleteMapping("/id/{idVisitas}")
+    @CrossOrigin("*")
     public String deleteVisitasGuiadasxId(@PathVariable(name = "idVisitas") int idVisitas) {
         return service.deleteVisitasGuiadasxId(idVisitas);
     }
