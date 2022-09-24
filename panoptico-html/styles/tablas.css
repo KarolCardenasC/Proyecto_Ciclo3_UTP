@@ -14,7 +14,7 @@ main {
     top: 0;
     left: 0;
     right: 0;
-    min-height: 82vh;
+    min-height: 100vh;
 }
 #ordenar-nombre {
     cursor: pointer;

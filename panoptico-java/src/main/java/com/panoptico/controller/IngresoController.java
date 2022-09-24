@@ -24,6 +24,7 @@ public class IngresoController {
 
 
     @GetMapping
+    @CrossOrigin("*")
     public List<Ingreso> getIngreso() {
         return service.getIngreso();
     }

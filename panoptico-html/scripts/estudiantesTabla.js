@@ -1,12 +1,6 @@
 const URL_API = "http://localhost:8080/estudiantes_inscritos";
 let ID_ESTUDIANTE = -1
 
-// ------------------------------ REFRESCAR VENTANA ----------------------
-
-function refrescarPagina(){
-  location.reload();
-}
-
 // ------------------------------ LISTAR ESTUDIANTES -------------------------------------------
 
 async function getEstudiantesInscritos(url) {
@@ -59,70 +53,6 @@ async function delete_estudiante () {
     alert(msg)
   }
   main()
-}
-
-// ------------------------------ CREAR ESTUDIANTE -------------------------------------------
-async function registrar_estudiante(evt) {
-  // Indicar que no recarge página al enviar el formulario
-  evt.preventDefault()
-  const form = evt.target
-  const estudiante = {
-    cedula : form.cedula.value,
-    nombre : form.nombre.value,
-    telefono : form.telefono.value,
-    email : form.email.value
-  }
-
-  let cedula = estudiante.cedula
-  let nombre = estudiante.nombre
-  let telefono = estudiante.telefono
-  let email = estudiante.email
-
-
-  if(cedula.length==0 || /^\s+$/.test(cedula) || isNaN(cedula)){
-    alert("Error!! El campo cédula no puede estar vacío y debe contener números")
-
-  } else if(nombre.length==0 || /^\s+$/.test(nombre)){
-    alert("Error!! El campo nombre no puede estar vacio")
-
-  } else if(telefono.length==0 || /^\s+$/.test(telefono) || isNaN(telefono)){
-    alert("Error!! El campo telefono no puede estar vacio y debe contener números")
-
-  } else if(email.length==0 || /^\s+$/.test(email)){
-    alert("Error!! El campo email no puede estar vacío")
-    
-  } else{
-    create_estudiante(estudiante)
-  }
-    
-  clear(form)
-}
-
-function clear(form){
-  form.cedula.value = ""
-  form.nombre.value = ""
-  form.telefono.value = ""
-  form.email.value = ""
-}
-
-async function create_estudiante(estudiante){
-  // Enviar Petición
-  const resp = await fetch(URL_API, {
-      method: 'POST',
-      headers:{
-        'Content-Type' : 'application/json'
-      },
-      body: JSON.stringify(estudiante)
-    })
-  const text = await resp.text()
-  const exitoso = "Estudiante registrado con éxito"
-  if(text == exitoso){
-    alert(exitoso)
-  }else{
-    const msg = "Error al registrar Estudiante!!! La cedula digitada ya se encuentra en la base de datos"
-    alert(msg)
-  }
-  
 }
 
 // ------------------------------ MAIN -------------------------------------------
