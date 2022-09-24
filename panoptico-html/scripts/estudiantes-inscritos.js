@@ -21,6 +21,16 @@ function submit_search (evt) {
         document.getElementById("mensaje-busqueda").innerText = "¡BIENVENIDO(A) " +estudiante.nombre + "\n"
         + "AL MUESO PANÓPTICO DE IBAGUÉ!"
         registrarIngreso(estudiante)
+        const btnAceptar =  document.getElementById("aceptar")
+        let contenidoAceptar=`
+            <button type="button" class="btn btn-success" 
+            data-bs-dismiss="modal"
+            id="aceptar"     
+            name="aceptar"  
+            onclick="irInicio()" 
+            >Aceptar</button>
+        `
+        btnAceptar.innerHTML= contenidoAceptar
     }
     else{
     document.getElementById("mensaje-busqueda").innerText = "Usuario consultado CC:" + cedula+
@@ -41,6 +51,10 @@ function submit_search (evt) {
       alert(text) */
     
 
+  }
+
+  function irInicio(){
+    window.location.href = "index.html"
   }
  
 
