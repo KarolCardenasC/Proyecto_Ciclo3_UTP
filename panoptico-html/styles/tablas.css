@@ -1,0 +1,100 @@
+.navbar{
+    background-color: #343a40;
+}
+#main-menu {
+
+    left: unset;
+    right: 0;
+}
+
+main {
+    content: "";
+    background: rgba(139, 233, 233, 0.39);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 82vh;
+}
+#ordenar-nombre {
+    cursor: pointer;
+}
+
+.logo {
+    color: white;
+    margin-left: 12px;
+}
+
+.btn-group {
+    margin-right: 12px;
+}
+
+.table .thead-dark tr {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+    height: 49px;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+.table{
+    text-align: center;
+}
+
+#exampleModal .modal-body #warning{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+#exampleModal .modal-body{
+    text-align: center;
+}
+
+.btn-danger {
+    margin-left: 15px;
+}
+
+.separador{
+    color: rgb(240, 240, 240);
+}
+
+.p{
+    margin-bottom: 15px;
+}
+
+#cc{
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.mb-3 p{
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+/*------------- FOOTER ----------------*/
+
+footer #imagenPie{
+	display: flex;
+	justify-content: center;
+}
+
+footer{
+    content: "";
+    background: #68aef077;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;  
+    border-style: solid;
+    border-width: 1px 0 0 0 ;
+    border-color: rgba(26, 17, 17, 0.253);
+}
