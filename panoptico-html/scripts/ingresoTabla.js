@@ -53,65 +53,6 @@ async function delete_ingreso() {
   main()
 }
 
-//--------------------- REGISTRAR INGRESO ----------------------------------
-
-function btn_ingresar_vis() {
-  document.getElementById("exampleModalLabel2").innerText = "Ingresar Visitante"
-  document.getElementById('cc').innerText = "Cedula Visitante"
-  document.getElementById('advertencia').innerText = "Visitas_Guiadas"
-}
-
-function btn_ingresar_est() {
-  document.getElementById("exampleModalLabel2").innerText = "Ingresar Estudiante"
-  document.getElementById('cc').innerText = "Cedula Estudiante"
-  document.getElementById('advertencia').innerText = "Estudiantes_Inscitos"
-  document.getElementById('formulario').innerText = "registrar_ingreso_vis(event)"
-}
-
-async function registrar_ingreso(evt) {
-  // Indicar que no recarge página al enviar el formulario
-  evt.preventDefault()
-  const form = evt.target
-  let cedula = form.cedula.value
-  // -------------------------------------
-      // enviar petición para verificar que existe
-      const URL_EST = "http://localhost:8080/estusiantes_inscritos"
-      const respuesta_existe = await fetch(`${URL_EST}/existe/${cedula}`)
-      const existe = await respuesta_existe.json()
-      //console.log(existe)
-      if (existe){
-        create_est(cedula)
-      }
-      else{
-        create_vis(cedula)
-      }
-      clear(form)
-}
-
-function clear(form){
-  form.cedula.value = ""
-  form.nombre.value = ""
-  form.telefono.value = ""
-  form.email.value = ""
-}
-
-async function create_vis(cedula){
-  // Enviar Petición
-  const resp = await fetch(`${URL_API}/visitantes/${cedula}`, {
-      method: 'POST'
-    })
-  const text = await resp.text()
-  alert(text)
-}
-async function create_est(cedula){
-  // Enviar Petición
-  const resp = await fetch(`${URL_API}/visitantes/${cedula}`, {
-      method: 'POST'
-    })
-  const text = await resp.text()
-  alert(text)
-}
-
 // ------------------------------ MAIN -------------------------------------------
 
 async function main() {

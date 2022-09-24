@@ -47,17 +47,7 @@
             <li>
               <hr class="separador dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="estudiantesTabla.html">Tabla Estudiantes</a></li>
-            <li>
-              <hr class="separador dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" onclick='btn_ingresar_vis()' data-bs-toggle="modal"
-                data-bs-target="#exampleModal2" href="">Ingresar Visitante</a></li>
-            <li>
-              <hr class="separador dropdown-divider">
-            </li>
-            <li><a class="p dropdown-item" onclick='btn_ingresar_est()' data-bs-toggle="modal"
-                data-bs-target="#exampleModal2" href="">Ingresar Estudiante</a></li>
+            <li><a class="p dropdown-item" href="estudiantesTabla.html">Tabla Estudiantes</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -67,30 +57,6 @@
       </div>
       </div>
     </nav>
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel2"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="modal-body2">
-            <form onsubmit="registrar_ingreso(event)">
-              <div class="mb-3">
-                <label for="cedula" class="col-form-label" id="cc"></label>
-                <input type="text" class="form-control" id="cedula" placeholder="Cédula">
-                <p>Nota:<br>Recuerde que para poder hacer el ingreso, la cédula debe estar registrada en la tabla <span
-                    id="advertencia"></span> !!!</p>
-              </div>
-              <div class="modal-footer" id="modal-footer2">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
 
   <!--Contenido-->
