@@ -13,31 +13,7 @@ function submit_post(evt) {
 
 async function POST(cedula, nombre, telefono, email) {
   // enviar petición
-  const respuesta_existe = await fetch(
+  const respuesta_visitante = await fetch(
     `${URL_API}/register/${(cedula, nombre, telefono, email)}`
   )
-  const existe = await respuesta_existe.json()
-  //console.log(existe)
-  if (existe) {
-    const respuesta = await fetch(`${URL_API}/${cedula}`)
-    const visitante = await respuesta.json()
-    console.log(visitante)
-    document.getElementById("mensaje-busqueda").innerText =
-      "¡BIENVENIDO(A) " +
-      visitante.nombre +
-      "\n" +
-      "AL MUESO PANÓPTICO DE IBAGUÉ!"
-    registrarIngreso(visitante)
-  } else {
-    document.getElementById("mensaje-busqueda").innerText =
-      "Usuario: " + cedula + nombre + " NO ha sido registrado"
-  }
-}
-
-async function registrarIngreso(visitante) {
-  const url_registrar_ingreso = URL_VISITAS + "/" + visitante.cedula
-  // enviar petición
-  const resp = await fetch(url_registrar_ingreso, {
-    method: "POST",
-  })
 }
