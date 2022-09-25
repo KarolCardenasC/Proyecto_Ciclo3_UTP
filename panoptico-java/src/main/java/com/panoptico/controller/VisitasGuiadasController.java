@@ -57,6 +57,7 @@ public class VisitasGuiadasController {
     }
 
     @PutMapping
+    @CrossOrigin("*")
     public String updateVisitasGuiadas(@RequestBody VisitasGuiadas visitasGuiadas) {
         return service.updateVisitasGuiadas(visitasGuiadas);
     }

@@ -57,6 +57,37 @@
       </div>
       </div>
     </nav>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Actualizar Estudiante</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body2">
+            <form onsubmit="modificar_estudiante(event)">
+              <div class="mb-3">
+                <label for="cedula" class="col-form-label" id="doc">Cédula Estudiante</label>
+                <input type="text" class="form-control" id="cedula" placeholder="Cédula">
+                <br>
+                <label for="nombre" class="col-form-label" id="nomb">Nombre Estudiante</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo">
+                <br>
+                <label for="telefono" class="col-form-label" id="tel">Telefono Estudiante</label>
+                <input type="text" class="form-control" id="telefono" placeholder="Número de celular">
+                <br>
+                <label for="email" class="col-form-label" id="gmail">Email Estudiante</label>
+                <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+              </div>
+              <div class="modal-footer" id="modal-footer2">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Actualizar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!--Contenido-->
