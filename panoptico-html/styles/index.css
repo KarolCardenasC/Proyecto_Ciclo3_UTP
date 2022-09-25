@@ -6,6 +6,21 @@ body {
     background-size: 88rem;
 }
 
+.navbar {
+    padding: 0%;
+}
+
+.navbar-brand {
+    padding: 3px;
+}
+
+.nav-link {
+    padding-top: 10%;
+    padding-bottom: 0%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .dropdown-menu {
     --bs-dropdown-min-width: 30rem;
     --bs-dropdown-padding-x: 0.5rem;
@@ -32,6 +47,7 @@ body {
 
 #div-formulario b {
     font-size: x-large;
+    font-weight: bolder;
 }
 
 .main-section {
