@@ -26,21 +26,25 @@ public class VisitasGuiadasController {
     }
 
     @GetMapping
+    @CrossOrigin("*")
     public List<VisitasGuiadas> getVisitasGuiadas() {
         return service.getVisitasGuiadas();
     }
 
     @GetMapping("/{cedula}")
+    @CrossOrigin("*")
     public VisitasGuiadas getxCC_VisitasGuiadas(@PathVariable(name = "cedula") String cedula) {
         return service.getxCC_VisitasGuiadas(cedula);
     }
 
     @GetMapping("/id/{idVisitas}")
+    @CrossOrigin("*")
     public VisitasGuiadas getxId_VisitasGuiadas(@PathVariable(name = "idVisitas") int idVisitas) {
         return service.getxId_VisitasGuiadas(idVisitas);
     }
 
     @PostMapping
+    @CrossOrigin("*")
     public String create(@RequestBody VisitasGuiadas visitasGuiadas) {
         return service.create(visitasGuiadas);
     }
