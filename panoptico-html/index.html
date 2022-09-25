@@ -20,20 +20,49 @@
 
     <title>Museo Panóptico</title>
   </head>
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" ><img src="./styles/imagenes/logo_2.png" width="40px" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="new page" href="https://ibaguecreativa.gov.co/museo-panoptico/">Descubre</a>
+            </li>
+          </ul>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              Admin
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end">
+              <form>
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="irTablas()">Ingresar</button>
+              </form>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
   <body>
     <!-- <body class="bg-success p-2 bg-opacity-75"> -->
-    <header>
-      <section class="m-4">
-        <a href="./ingresoTabla.html"
-          ><img
-            width="150"
-            class="p-3 rounded-circle"
-            src="./styles/imagenes/logo_2.png"
-            alt=""
-          />
-        </a>
-      </section>
-    </header>  
     <main>
       <section id="panel-central">
         <div id="div-formulario" class="card text-center">
@@ -56,4 +85,5 @@
     </main>
   </body>
   <footer></footer>
+  <script src="./scripts/index.js"></script>
 </html>

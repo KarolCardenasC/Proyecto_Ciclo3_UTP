@@ -1,8 +1,14 @@
 body {
     background-color: rgba(252, 232, 144, 0.765);
     background-image: url("../styles/imagenes/logo.png");
+    border-image: round;
     background-position: center;
     background-size: 88rem;
+}
+
+.dropdown-menu {
+    --bs-dropdown-min-width: 30rem;
+    --bs-dropdown-padding-x: 0.5rem;
 }
 
 .m-4 {
@@ -11,6 +17,7 @@ body {
 }
 
 #panel-central {
+    margin-top: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
