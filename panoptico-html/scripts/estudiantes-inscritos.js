@@ -5,7 +5,7 @@ function submit_search (evt) {
     evt.preventDefault()    
     const cedula = evt.target.cedula.value
     if(cedula.length==0 || /^\s+$/.test(cedula)){
-      document.getElementById("mensaje-busqueda").innerText = "Error el campo cédula NO puede estar vacio " 
+      document.getElementById("mensaje-busqueda").innerText = "Error el campo cédula NO puede estar vacío " 
       console.log(cedula)
     }else{
       search(cedula) 
