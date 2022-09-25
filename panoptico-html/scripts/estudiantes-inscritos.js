@@ -4,8 +4,14 @@ const URL_INSCRITOS = "http://localhost:8080/ingreso/estudiantes";
 function submit_search (evt) {
     evt.preventDefault()    
     const cedula = evt.target.cedula.value
+    if(cedula.length==0 || /^\s+$/.test(cedula)){
+      document.getElementById("mensaje-busqueda").innerText = "Error el campo cédula NO puede estar vacio " 
+      console.log(cedula)
+    }else{
+      search(cedula) 
+    }
    // console.log(cedula)
-    search(cedula) 
+   
   
   }
 
@@ -17,7 +23,7 @@ function submit_search (evt) {
     if (existe){
         const respuesta = await fetch(`${URL_API}/${cedula}`)
         const estudiante = await respuesta.json()
-        console.log(estudiante)
+        //console.log(estudiante)
         document.getElementById("mensaje-busqueda").innerText = "¡BIENVENIDO(A) " +estudiante.nombre + "\n"
         + "AL MUESO PANÓPTICO DE IBAGUÉ!"
         registrarIngreso(estudiante)
