@@ -49,3 +49,12 @@ async function create(visitas_guiadas) {
   const text = await resp.text()
   alert(text)
 }
+
+function alert(visitas_guiadas) {
+  document.getElementById("mensaje-busqueda").innerText =
+    visitas_guiadas.nombre + " " + visitas_guiadas.cedula
+}
+
+function irInicio() {
+  window.location.href = "index.html"
+}

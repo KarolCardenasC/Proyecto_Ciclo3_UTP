@@ -74,15 +74,14 @@
                   placeholder="Correo"
                 />
               </div>
-              <section>
-                <button
-                  class="btn btn-success"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  Registrar
-                </button>
-              </section>
+              <button
+                type="submit"
+                class="btn btn-success btn-lg p-3"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Registrar
+              </button>
             </form>
           </div>
         </div>
@@ -106,14 +105,17 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body"><span id="mensaje-registro"></span></div>
+            <div class="modal-body">
+              <span id="mensaje-busqueda"></span>
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-success btn-lg p-3"
+                class="btn btn-danger btn-lg p-2"
                 data-bs-dismiss="modal"
+                onclick="irInicio()"
               >
-                Aceptar
+                Finalizar
               </button>
             </div>
           </div>
