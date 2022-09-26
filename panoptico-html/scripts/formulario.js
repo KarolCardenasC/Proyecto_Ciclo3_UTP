@@ -57,13 +57,17 @@ async function create(visitas_guiadas, modal_titulo, modal_body) {
 
   const text = await resp.text()
   const exitoso = "Visitante registrado con éxito" + "\n" + "Estudiante No inscrito ingresado a la tabla registro con éxito"
+  const regis_exitoso = "Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement" + "\n" + "Estudiante No inscrito ingresado a la tabla registro con éxito"
   
   if(text == exitoso){
     modal_titulo.innerText = "Bienvenido"
-    modal_body.innerText =  `Se registro el Visitante con éxito y fue ingresado a la base de datos correctamente!!!`
+    modal_body.innerText =  `Se registro el Visitante con éxito y fue ingresado a la base de datos correctamente ¡¡¡Disfrute su visita!!!`
+  }else if(text == regis_exitoso){
+    modal_titulo.innerText = "Bienvenido"
+    modal_body.innerText =  `La cedula digitada ya se encuentra registrada, por lo que sólo se hizo válido el ingreso ¡¡¡Disfrute su visita!!!`
   }else{
     modal_titulo.innerText = "Error"
-    modal_body.innerText =  `La cedula digitada ya se encuentra en la base de datos!!!`
+    modal_body.innerText =  `Problema al conectarse con la base de datos, por favor intentelo más tarde !!!`
   }
 
 }
