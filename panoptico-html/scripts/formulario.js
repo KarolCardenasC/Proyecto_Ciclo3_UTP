@@ -2,10 +2,10 @@ const URL_API = "http://localhost:8080/visitas_guiadas/register"
 
 function get_data_form(evt) {
   // Indicar que no recarge página al enviar el formulario
-  evt.preventDefault()  
+  evt.preventDefault()
 
-  let modal_titulo =  document.getElementById("exampleModalLabel")
-  let  modal_body =  document.getElementById("mensaje-busqueda")
+  let modal_titulo = document.getElementById("exampleModalLabel")
+  let modal_body = document.getElementById("mensaje-busqueda")
 
   const form = evt.target
   const visitas_guiadas = {
@@ -17,20 +17,18 @@ function get_data_form(evt) {
   console.table({ visitas_guiadas })
   if (cedula.value == "" || /^\s+$/.test(cedula.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =  "Error!! El campo cedula no puede estar vacio"
-
+    modal_body.innerText = "Error!! El campo cedula no puede estar vacio"
   } else if (nombre.value == "" || /^\s+$/.test(nombre.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =  "Error!! El campo nombre no puede estar vacio y debe contener números"
-
+    modal_body.innerText =
+      "Error!! El campo nombre no puede estar vacio y debe contener números"
   } else if (telefono.value == "" || /^\s+$/.test(telefono.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =  "Error!! El campo telefono no puede estar vacio y debe contener números"
-
+    modal_body.innerText =
+      "Error!! El campo telefono no puede estar vacio y debe contener números"
   } else if (email.value == "" || /^\s+$/.test(email.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =  "Error!! El campo email no puede estar vacío"
-
+    modal_body.innerText = "Error!! El campo email no puede estar vacío"
   } else {
     create(visitas_guiadas, modal_titulo, modal_body)
   }
@@ -56,20 +54,25 @@ async function create(visitas_guiadas, modal_titulo, modal_body) {
   })
 
   const text = await resp.text()
-  const exitoso = "Visitante registrado con éxito" + "\n" + "Estudiante No inscrito ingresado a la tabla registro con éxito"
-  const regis_exitoso = "Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement" + "\n" + "Estudiante No inscrito ingresado a la tabla registro con éxito"
-  
-  if(text == exitoso){
-    modal_titulo.innerText = "Bienvenido"
-    modal_body.innerText =  `Se registro el Visitante con éxito y fue ingresado a la base de datos correctamente ¡¡¡Disfrute su visita!!!`
-  }else if(text == regis_exitoso){
-    modal_titulo.innerText = "Bienvenido"
-    modal_body.innerText =  `La cedula digitada ya se encuentra registrada, por lo que sólo se hizo válido el ingreso ¡¡¡Disfrute su visita!!!`
-  }else{
-    modal_titulo.innerText = "Error"
-    modal_body.innerText =  `Problema al conectarse con la base de datos, por favor intentelo más tarde !!!`
-  }
+  const exitoso =
+    "Visitante registrado con éxito" +
+    "\n" +
+    "Estudiante No inscrito ingresado a la tabla registro con éxito"
+  const regis_exitoso =
+    "Converting `org.hibernate.exception.ConstraintViolationException` to JPA `PersistenceException` : could not execute statement" +
+    "\n" +
+    "Estudiante No inscrito ingresado a la tabla registro con éxito"
 
+  if (text == exitoso) {
+    modal_titulo.innerText = "Bienvenido" + " " + visitas_guiadas.nombre
+    modal_body.innerText = `Su registro fué exitoso y se ingresó a la base de datos correctamente ¡¡¡Disfrute su visita!!!`
+  } else if (text == regis_exitoso) {
+    modal_titulo.innerText = "Bienvenido" + " " + visitas_guiadas.nombre
+    modal_body.innerText = `La cedula digitada ya se encuentra registrada, por lo que sólo se hizo válido el ingreso ¡¡¡Disfrute su visita!!!`
+  } else {
+    modal_titulo.innerText = "Error"
+    modal_body.innerText = `Problema al conectarse con la base de datos, por favor intentelo más tarde !!!`
+  }
 }
 
 function irInicio() {

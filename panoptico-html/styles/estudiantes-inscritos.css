@@ -10,7 +10,8 @@ header img {
 body {
     /*     heigh:665px; */
     background-image: url("../styles/imagenes/logo.png");
-    background-size: 88rem;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #f65e5ec1;
 }
 
@@ -24,7 +25,7 @@ body {
 
 #div-formulario b {
     font-size: x-large;
-    
+
 
 }
 

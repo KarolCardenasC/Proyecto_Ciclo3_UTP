@@ -10,7 +10,8 @@ header img {
 body {
   /*     heigh:665px; */
   background-image: url("../styles/imagenes/logo.png");
-  background-size: 88rem;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #069B6C;
 }
 
@@ -27,8 +28,8 @@ body {
 
 }
 
-#btn-ok{
-  text-decoration: none; 
+#btn-ok {
+  text-decoration: none;
 }
 
 .card-body input {

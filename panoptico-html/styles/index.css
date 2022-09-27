@@ -1,9 +1,9 @@
 body {
     background-color: rgba(252, 232, 144, 0.765);
     background-image: url("../styles/imagenes/logo.png");
-    border-image: round;
-    background-position: center;
-    background-size: 88rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .navbar {
