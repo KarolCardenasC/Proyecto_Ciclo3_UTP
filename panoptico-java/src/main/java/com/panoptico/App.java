@@ -20,6 +20,7 @@ public class App {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/estudiantes_inscritos").allowedOrigins("*");
                 registry.addMapping("/visitas_guiadas").allowedOrigins("*");
+                registry.addMapping("/login_admin").allowedOrigins("*");
             }
         };
     }
