@@ -17,8 +17,7 @@ function submit_search(evt) {
     modal_body.innerText = "¡El campo email no puede estar vacio!"
   } else if (pass.value == "" || /^\s+$/.test(pass.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =
-      "¡El campo password no puede estar vacio y debe contener números!"
+    modal_body.innerText = "¡El campo password no puede estar vacio!"
   } else {
     register(login_admin, modal_titulo, modal_body)
   }

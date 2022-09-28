@@ -17,11 +17,11 @@ function get_data_form(evt) {
   console.table({ visitas_guiadas })
   if (cedula.value == "" || /^\s+$/.test(cedula.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText = "Error!! El campo cedula no puede estar vacio"
+    modal_body.innerText =
+      "Error!! El campo cedula no puede estar vacio y debe contener números"
   } else if (nombre.value == "" || /^\s+$/.test(nombre.value)) {
     modal_titulo.innerText = "Error"
-    modal_body.innerText =
-      "Error!! El campo nombre no puede estar vacio y debe contener números"
+    modal_body.innerText = "Error!! El campo nombre no puede estar vacio"
   } else if (telefono.value == "" || /^\s+$/.test(telefono.value)) {
     modal_titulo.innerText = "Error"
     modal_body.innerText =
