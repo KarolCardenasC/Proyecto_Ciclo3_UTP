@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.panoptico.model.LoginAdmin;
@@ -37,4 +38,11 @@ public class LoginController {
     public LoginAdmin getPass(@PathVariable(name = "pass") String pass) {
         return service.getPass(pass);
     }
+
+    @GetMapping("/login")
+    @CrossOrigin("*")
+    public boolean login(@RequestParam String username, @RequestParam String clave) {
+      return service.login(username, clave);
+    }
+
 }

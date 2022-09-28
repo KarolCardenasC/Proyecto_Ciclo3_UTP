@@ -65,4 +65,23 @@ public class LoginService {
         return loginAdmin;
     }
 
+    public boolean login(String username, String clave) {
+        boolean flag= false;    
+        Session session = openSession();
+        try {
+          List<LoginAdmin> list = session.createQuery("from LoginAdmin where email = :param_usuario and pass = :param_contrasenia", LoginAdmin.class)
+            .setParameter("param_usuario", username)
+            .setParameter("param_contrasenia", clave)
+            .list();
+            if(list.size()>0){
+              System.out.println(list.get(0));
+              flag = true;
+          }
+          session.close();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+        return flag;
+      } 
+
 }
