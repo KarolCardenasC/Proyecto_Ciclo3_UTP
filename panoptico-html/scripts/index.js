@@ -49,3 +49,36 @@ async function register() {
 function irTablas() {
   window.location.href = "ingresoTabla.html"
 }
+
+function submit_login(evt) {
+  evt.preventDefault()
+  const email = evt.target.mail.value
+  const pass = evt.target.pass.value
+  if(email.length==0 || /^\s+$/.test(email) || pass.length==0 || /^\s+$/.test(pass) ){
+    document.getElementById("mensaje-busqueda").innerText = "Error el campo email o cédula NO puede estar vacío " 
+    //console.log(cedula)
+  }else{
+    //alert(pass)
+  search(email, pass)
+  }
+  
+
+}
+
+async function search (email, pass) {
+  // enviar petición
+  const respuesta_existe = await fetch(`${URL_API}/login?username=${email}&clave=${pass}`)
+  const existe = await respuesta_existe.json()
+  
+  //alert(existe)
+  if (existe){
+    //alert("login exitoso")
+    document.getElementById("mensaje-busqueda").innerText = "Bienvenido" 
+    window.location.href = "ingresoTabla.html"
+  }else{
+    document.getElementById("mensaje-busqueda").innerText = "Usuario o clave equivocados" 
+    //clear(form)
+  }
+
+}
+
